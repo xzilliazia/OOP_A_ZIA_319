@@ -1,23 +1,23 @@
 package Modul1.Tugas;
 
-import java.awt.GridBagLayout;
 import java.util.Scanner;
 
 public class Tugas1 {
     public static void main(String[] args) {
+        System.out.println("PIlih Login:\n1. Admin\n2. Mahasiswa");
         try (Scanner input = new Scanner(System.in)) {   
             System.out.print("Masukkan Pilihan: ");
-            int choise = input.nextLine();
+            int choise = input.nextInt();
             input.nextLine();
 
-            //Data Login
-            String inputUsernameAdmin = "Admin";
-            String inputPasswordAdmin = "admin12";
-            String inputUsernameSiswa = "Ziaulhaq";
-            String inputNIMSiswa = "319";
+                //Data Login
+                String inputUsernameAdmin = "Admin";
+                String inputPasswordAdmin = "admin12";
+                String inputUsernameSiswa = "Ziaulhaq";
+                String inputNIMSiswa = "319";
 
         switch (choise) {
-            case 1 :
+            case 1 -> {
                 System.out.print("Masukkan Username: ");
                 String username = input.nextLine();
                 System.out.print("Masukkan Password: ");
@@ -28,8 +28,8 @@ public class Tugas1 {
                 } else {
                     System.out.println("Gagal Login.");
                 }
-                break;
-            case 2 :
+                }
+            case 2 -> {
                 System.out.print("Masukkan Nama: ");
                 String usermh = input.nextLine();
                 System.out.print("Masukkan NIM: ");
@@ -40,16 +40,11 @@ public class Tugas1 {
                 } else {
                     System.out.println("Gagal Login.");
                 }
-                break;
-            default:
-                throw new AssertionError();
-        }
-            else if (input == 2){
-
-            } else {
-                System.out.println("Pilihan tiidak valid.");
-            }
-            
+                }
+            default -> {
+                System.out.println("Pilihan Invalid");
+                }
+        }   
         }
     }
 }
