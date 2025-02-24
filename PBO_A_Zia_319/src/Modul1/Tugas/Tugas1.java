@@ -26,7 +26,7 @@ public class Tugas1 {
                 if (username.equals(inputUsernameAdmin) && (password.equals(inputPasswordAdmin))) {
                     System.out.println("Login anda berhasil!");
                 } else {
-                    System.out.println("Gagal Login.");
+                    System.out.println("Gagal Login. Username / Password salah.");
                 }
                 }
             case 2 -> {
@@ -38,7 +38,7 @@ public class Tugas1 {
                 if (usermh.equals(inputUsernameSiswa) && (nimpassword.equals(inputNIMSiswa))){
                     System.out.println("Login berhasil!");
                 } else {
-                    System.out.println("Gagal Login.");
+                    System.out.println("Gagal Login. Nama / NIM salah.");
                 }
                 }
             default -> {
