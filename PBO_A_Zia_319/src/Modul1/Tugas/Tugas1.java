@@ -11,6 +11,7 @@ public class Tugas1 {
             input.nextLine();
 
                 //Data Login
+                ///test
                 String inputUsernameAdmin = "Admin";
                 String inputPasswordAdmin = "admin12";
                 String inputUsernameSiswa = "Ziaulhaq";
