@@ -1,5 +1,4 @@
-package Modul1.Tugas;
-
+package Task.Modul1;
 import java.util.Scanner;
 
 public class Tugas1 {
