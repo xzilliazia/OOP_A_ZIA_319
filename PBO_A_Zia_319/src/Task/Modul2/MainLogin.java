@@ -17,7 +17,7 @@ public class MainLogin {
             System.out.print("Masukkan pilihan (1/2/3): ");
             int choise = input.nextInt();
             input.nextLine();
-        
+
             String inputUser, inputPassword;
 
         switch (choise) {
@@ -26,8 +26,8 @@ public class MainLogin {
                 inputUser = input.nextLine();
                 System.out.print("Masukkan Password: ");
                 inputPassword = input.nextLine();
-                
-                if (admin.getLogin(inputUser, inputPassword)){
+
+                if (admin.Login(inputUser, inputPassword)){
                     System.out.println("Login Berhasil!!");
                     
                 } else {
@@ -40,7 +40,7 @@ public class MainLogin {
                 System.out.print("Masukkan NIM: ");
                 inputPassword = input.nextLine();
                 
-                if (student.getLogin(inputUser, inputPassword)){
+                if (student.Login(inputUser, inputPassword)){
                     System.out.println("Berhasil Login");
                     student.displayInfo();
                 } else {
@@ -52,10 +52,9 @@ public class MainLogin {
             default:
                 System.out.println("Pilihan tidak valid! Silakan coba lagi.");
                 break;
+
+                }
+            }
         }
-        }
-        } catch (Exception e){
-            System.out.println("Terjadi Eror: "+ e.getMessage());
-        } 
     }
 }

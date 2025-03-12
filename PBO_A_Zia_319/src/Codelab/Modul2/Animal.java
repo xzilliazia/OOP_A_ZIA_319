@@ -16,12 +16,3 @@ class Animal{
         System.out.println("Sound\t: " + this.sound + "\n");
     }
 }
-
-public class Codelab1 {
-    public static void main(String[] args) {
-        Animal animal1 = new Animal("Cat", "Mammal", "Nyann~~");
-        Animal animal2 = new Animal("Dof", "Mammal", "Woof~Woof~!!");
-        animal1.displayInfo();
-        animal2.displayInfo();
-    }
-}
