@@ -8,7 +8,7 @@ class AdminLogin{
         this.username = username;
         this.password = password;
     }
-    public boolean getLogin(String inputUsername, String inputPassword){
+    public boolean Login(String inputUsername, String inputPassword){
         return this.username.equals(inputUsername) && this.password.equals(inputPassword);
     }
 }

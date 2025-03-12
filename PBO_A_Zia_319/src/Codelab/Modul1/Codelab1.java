@@ -24,7 +24,6 @@ public class Codelab1 {
                 System.out.println("Pilihann Tidak valid");
             }
         }
-
             System.out.print("Tahun Lahir : ");
             int timeuser = input.nextInt();
             int timenow = LocalDate.now().getYear();

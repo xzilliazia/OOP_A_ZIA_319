@@ -28,5 +28,4 @@ class BankAccount{
         System.out.println("Nama Rekening\t: "+ this.ownerName);
         System.out.println("Saldo\t\t: "+ this.balance+"\n");
     }
-
 }

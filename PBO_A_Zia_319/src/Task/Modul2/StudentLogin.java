@@ -9,7 +9,7 @@ class StudentLogin{
         this.studentId = studentId;
     }
 
-    public boolean getLogin(String name, String studentId){
+    public boolean Login(String name, String studentId){
         return this.name.equals(name) && this.studentId.equals(studentId);
     }
     public void displayInfo(){

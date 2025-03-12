@@ -9,7 +9,6 @@ public class BankMain {
         account2.displayInfo();
         account1.depositMoney(70000d);
         account1.withDrawMoney(78000d);
-
         //akun 2
         account2.depositMoney(80000d);
         account2.withDrawMoney(85000d);

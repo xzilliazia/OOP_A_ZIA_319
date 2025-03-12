@@ -8,9 +8,7 @@ public class Tugas1 {
             System.out.print("Masukkan Pilihan: ");
             int choise = input.nextInt();
             input.nextLine();
-
                 //Data Login
-                ///test
                 String inputUsernameAdmin = "Admin";
                 String inputPasswordAdmin = "admin12";
                 String inputUsernameSiswa = "Ziaulhaq";

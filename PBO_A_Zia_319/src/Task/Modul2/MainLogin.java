@@ -52,7 +52,6 @@ public class MainLogin {
             default:
                 System.out.println("Pilihan tidak valid! Silakan coba lagi.");
                 break;
-
                 }
             }
         }

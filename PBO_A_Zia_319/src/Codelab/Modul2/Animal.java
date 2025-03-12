@@ -13,6 +13,6 @@ class Animal{
     void displayInfo(){
         System.out.println("Name\t: " + this.name);
         System.out.println("Type\t: " + this.type);
-        System.out.println("Sound\t: " + this.sound + "\n");
+        System.out.println("Sound\t: " + this.sound +"\n");
     }
 }
