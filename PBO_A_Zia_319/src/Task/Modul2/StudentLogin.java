@@ -13,6 +13,7 @@ class StudentLogin{
         return this.name.equals(name) && this.studentId.equals(studentId);
     }
     public void displayInfo(){
+        System.out.println("============\nData Informasi Siswa:");
         System.out.println("Nama Mahasiswa: "+ this.name);
         System.out.println("NIM: "+ this.studentId);
     }
