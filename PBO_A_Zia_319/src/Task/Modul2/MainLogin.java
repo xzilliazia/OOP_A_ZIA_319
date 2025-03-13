@@ -10,10 +10,7 @@ public class MainLogin {
         //trywithresource
         try (Scanner input = new Scanner(System.in)){
         while (true) {
-            System.out.println("Pilih jenis Login:");
-            System.out.println("1. Admin");
-            System.out.println("2. Student");
-            System.out.println("3. Keluar");
+            System.out.println("Pilih jenis Login:\n1. Admin\n2. Student\n3. Keluar");
             System.out.print("Masukkan pilihan (1/2/3): ");
             int choise = input.nextInt();
             input.nextLine();
@@ -26,27 +23,28 @@ public class MainLogin {
                 inputUser = input.nextLine();
                 System.out.print("Masukkan Password: ");
                 inputPassword = input.nextLine();
-
+                //validasi
                 if (admin.Login(inputUser, inputPassword)){
                     System.out.println("Login Berhasil!!");
-                    
                 } else {
                     System.out.println("Login Admin Gagal! Username atau Password salah.");
+                    continue;
                 }
-                break;
+                return;
             case 2 :
                 System.out.print("Masukkan Nama Mahsiswa: ");
                 inputUser = input.nextLine();
                 System.out.print("Masukkan NIM: ");
                 inputPassword = input.nextLine();
-                
+                //validasi
                 if (student.Login(inputUser, inputPassword)){
                     System.out.println("Berhasil Login");
                     student.displayInfo();
                 } else {
                     System.out.println("Login Gagal! Username atau Password salah.");
+                    continue;
                 }
-                break;
+                return;
             case 3:
                 return;
             default:
