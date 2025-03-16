@@ -11,7 +11,6 @@ public class AdminClass extends UserLoginClass{
         displayInfo(isLogin);
         return isLogin;
     }
-
     public void displayInfo(boolean isLogin){
         if(isLogin){
             System.out.println("Login Berhasil");
