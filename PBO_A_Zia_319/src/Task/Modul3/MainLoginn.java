@@ -17,16 +17,17 @@ public class MainLoginn {
                 System.out.println("Progam Keluar.");
                 break;
             } else if (choice.equals("1")){
-                if (loginUser(input, admin1)) break;
+                loginUser(input, admin1);
             } else if (choice.equals("2")){
-                if (loginUser(input, student1)) break;
+                loginUser(input, student1);
             } else {
                 System.out.println("Input Invalid. Harap Masukkan 1/2/3.");
             }
-        } input.close();
+        }
+        input.close();
     }
     
-    private static boolean loginUser (Scanner input, UserLoginClass user){
+    private static void loginUser (Scanner input, UserLoginClass user){
         System.out.print("\nMasukkan Username: ");
         String userName = input.nextLine();
         System.out.print("Masukkan Password: ");
@@ -34,7 +35,5 @@ public class MainLoginn {
 
         boolean isLogin = user.Login(userName, userPassw);
         user.displayInfo(isLogin);
-        return isLogin;
-
     }
 }

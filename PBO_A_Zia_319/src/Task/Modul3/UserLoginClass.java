@@ -22,7 +22,13 @@ public class UserLoginClass {
     }
 
     public boolean Login(String inputUserName, String inputUserPassw){
-        return false;
+        return userName.equals(inputUserName) && userPassw.equals(inputUserPassw);
     }
-    public void displayInfo(boolean isLogin){}
+    public void displayInfo(boolean isLogin){
+        if(isLogin){
+            System.out.println("Login Berhasil");
+        } else {
+            System.out.println("Username / Password Salah!");
+        }
+    }
 }
