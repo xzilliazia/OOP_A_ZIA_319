@@ -7,15 +7,6 @@ public class AdminClass extends UserLoginClass{
 
     @Override
     public boolean Login(String inputUserName, String inputUserPassw){
-        boolean isLogin = getName().equals(inputUserName) && getPassw().equals(inputUserPassw);
-        displayInfo(isLogin);
-        return isLogin;
-    }
-    public void displayInfo(boolean isLogin){
-        if(isLogin){
-            System.out.println("Login Berhasil");
-        } else {
-            System.out.println("Username / Password Salah!");
-        }
+        return super.Login(inputUserName, inputUserPassw);
     }
 }
