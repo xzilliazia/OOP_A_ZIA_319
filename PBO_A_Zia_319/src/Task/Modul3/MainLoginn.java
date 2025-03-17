@@ -26,7 +26,6 @@ public class MainLoginn {
         }
         input.close();
     }
-    
     private static void loginUser (Scanner input, UserLoginClass user){
         System.out.print("\nMasukkan Username: ");
         String userName = input.nextLine();
