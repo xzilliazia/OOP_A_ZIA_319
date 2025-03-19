@@ -3,16 +3,16 @@ import java.util.Scanner;
 
 public class MainLoginn {
     public static void main(String[] args) {
-        //object dai 2 class
+        //object dfrom 2 class 
         AdminClass admin1 = new AdminClass("Zia", "319");
         StudentClass student1 = new StudentClass("dian", "24");
-
+        //scanner for user
         Scanner input = new Scanner(System.in);
         while(true){
             System.out.println("Pilih jenis Login:\n1. Admin\n2. Student\n3. Keluar");
             System.out.print("Masukkan pilihan (1/2/3): ");
             String choice = input.nextLine().trim();
-
+            //trying with if-else not with switch-case
             if (choice.equals("3")){
                 System.out.println("Progam Keluar.");
                 break;
@@ -21,7 +21,7 @@ public class MainLoginn {
             } else if (choice.equals("2")){
                 loginUser(input, student1);
             } else {
-                System.out.println("Input Invalid. Harap Masukkan 1/2/3.");
+                System.out.println("Input Invalid. Harap Masukkan 1/2/3");
             }
         }
         input.close();

@@ -20,7 +20,7 @@ public class UserLoginClass {
     public void setStudentId(String userPassw){
         this.userPassw = userPassw;
     }
-
+    //boolean to user login (username and password)
     public boolean Login(String inputUserName, String inputUserPassw){
         return userName.equals(inputUserName) && userPassw.equals(inputUserPassw);
     }

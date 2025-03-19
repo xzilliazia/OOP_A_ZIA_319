@@ -7,7 +7,7 @@ public class Enemy extends GameChar{
             super(name, Health);
             this.weapon = weapon;
         }
-        
+    //so I use weapon to damage the target
     @Override
     public void Attack(GameChar Target){
         System.out.println(GetName() + " is asttacking " + Target.GetName() + " useing " + weapon.Getname());
