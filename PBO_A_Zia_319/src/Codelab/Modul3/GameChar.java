@@ -26,4 +26,7 @@ class GameChar {
     public void Attack(GameChar Target){
         System.out.println(name + " Menyerang "+ Target.GetName());
     }
+    public void DisplayInfo(){
+        System.out.println(GetName() + " has Health: "+ GetHealth());
+    }
 }
