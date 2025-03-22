@@ -19,9 +19,9 @@ class GameChar {
     public void SetName(String name){
         this.name = name;
     }
-    // public void SetHealth(int Health){
-    //     this.Health = Health;
-    // }
+    public void SetHealth(int Health){
+        this.Health = Health;
+    }
 
     public void Attack(GameChar Target){
         System.out.println(name + " Menyerang "+ Target.GetName());
