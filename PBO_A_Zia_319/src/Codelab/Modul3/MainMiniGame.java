@@ -15,7 +15,6 @@ public class MainMiniGame {
         GeneralCharacter.DisplayInfo();
         hero1.DisplayInfo();
         enemy1.DisplayInfo();
-
         enemy1.Attack(hero1);
         hero1.Attack(enemy1);
         
