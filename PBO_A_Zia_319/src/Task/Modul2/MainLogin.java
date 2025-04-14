@@ -10,11 +10,16 @@ public class MainLogin {
         //trywithresource
         try (Scanner input = new Scanner(System.in)){
         while (true) {
-            System.out.println("Pilih jenis Login:\n1. Admin\n2. Student\n3. Keluar");
+            System.out.println("\nPilih jenis Login:\n1. Admin\n2. Student\n3. Keluar");
             System.out.print("Masukkan pilihan (1/2/3): ");
+            if (!input.hasNextInt()){
+                // System.out.print("Masukkan pilihan (1/2/3): ");
+                input.nextLine();
+                continue;
+            }
             int choise = input.nextInt();
             input.nextLine();
-
+            
             String inputUser, inputPassword;
 
         switch (choise) {
