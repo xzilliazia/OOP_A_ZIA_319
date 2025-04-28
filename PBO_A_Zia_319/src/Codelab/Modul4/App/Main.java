@@ -10,8 +10,8 @@ public class Main {
         buku2.displayInfo();
         System.out.println();
 
-        Anggota anggota1 = new Anggota("Wahyu Andika", "B075");
-        Anggota anggota2 = new Anggota("Ega Faiz", "A047");
+        Anggota anggota1 = new Anggota("Ziaulhaq", "A319");
+        Anggota anggota2 = new Anggota("Diandra", "A024");
 
         anggota1.tampilkanInfo();
         anggota2.tampilkanInfo();
