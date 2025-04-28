@@ -17,7 +17,7 @@ public class Main {
         anggota2.tampilkanInfo();
         System.out.println();
 
-        anggota1.pinjamBuku(buku1);
+        anggota1.pinjamBuku(buku1, 5);
         anggota2.pinjamBuku(buku2, 7);
         System.out.println();
 
