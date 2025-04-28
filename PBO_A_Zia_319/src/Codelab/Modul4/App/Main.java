@@ -17,11 +17,11 @@ public class Main {
         anggota2.tampilkanInfo();
         System.out.println();
 
-        anggota1.pinjamBuku("Madilog");
-        anggota2.pinjamBuku("Hainuwele: Sang Putri Kelapa", 7);
+        anggota1.pinjamBuku(buku1);
+        anggota2.pinjamBuku(buku2, 7);
         System.out.println();
 
-        anggota1.kembalikanBuku("Madilog");
-        anggota2.kembalikanBuku("Hainuwele: Sang Putri Kelapa");
+        anggota1.kembalikanBuku(buku1);
+        anggota2.kembalikanBuku(buku2);
     }
 }

@@ -14,17 +14,17 @@ public class Anggota implements Peminjaman {
     }
 
     @Override
-    public void pinjamBuku(String judul) {
-        System.out.println(nama + " meminjam buku berjudul: " + judul);
+    public void pinjamBuku(Buku book) {
+        System.out.println(nama + " meminjam buku berjudul: " + book.getJudul());
     }
-
-    public void pinjamBuku(String judul, int durasi) {  // Overloading
-        System.out.println(nama + " meminjam buku \"" + judul + "\" selama " + durasi + " hari.");
+    //over;oadinng
+    public void pinjamBuku(Buku book, int durasi) {
+        System.out.println(nama + " meminjam buku \"" + book.getJudul() + "\" selama " + durasi + " hari.");
     }
 
     @Override
-    public void kembalikanBuku(String judul) {
-        System.out.println(nama + " mengembalikan buku berjudul: " + judul);
+    public void kembalikanBuku(Buku book) {
+        System.out.println(nama + " mengembalikan buku berjudul: " + book.getJudul());
     }
 }
 

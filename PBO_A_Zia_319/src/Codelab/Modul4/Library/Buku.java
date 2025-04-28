@@ -9,6 +9,10 @@ public abstract class Buku {
         this.penulis = penulis;
     }
 
+    public String getJudul(){
+        return judul;
+    }
+
     public abstract void displayInfo();
 }
 
