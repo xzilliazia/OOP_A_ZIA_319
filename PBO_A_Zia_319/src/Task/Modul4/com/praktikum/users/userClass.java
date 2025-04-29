@@ -8,10 +8,7 @@ public abstract class userClass {
         this.username = username;
         this.password = password;
     }
-    public String getName(){
-        return username;
-    }
-
+    
     public abstract void login();
     abstract void displayAppMenu();
 }
