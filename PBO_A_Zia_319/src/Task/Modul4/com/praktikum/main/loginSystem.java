@@ -25,8 +25,5 @@ public class loginSystem {
             default:
                 break;
         }
-
-        
-    
     }
 }
