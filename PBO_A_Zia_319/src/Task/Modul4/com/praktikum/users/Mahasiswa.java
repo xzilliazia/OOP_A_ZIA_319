@@ -7,7 +7,7 @@ public class Mahasiswa extends userClass implements MahasiswaActions{
     public Mahasiswa(String username, String password){
         super(username, password);
     }
-    //NOT YET
+    
     @Override
     public void login(){
         Scanner input = new Scanner(System.in);
