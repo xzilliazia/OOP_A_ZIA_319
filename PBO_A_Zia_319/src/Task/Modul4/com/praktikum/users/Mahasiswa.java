@@ -3,8 +3,6 @@ import Task.Modul4.com.praktikum.actions.*;
 import java.util.Scanner;
 
 public class Mahasiswa extends userClass implements MahasiswaActions{
-    private String name;
-    private String idStudent;
 
     public Mahasiswa(String username, String password){
         super(username, password);
@@ -12,13 +10,26 @@ public class Mahasiswa extends userClass implements MahasiswaActions{
     //NOT YET
     @Override
     public void login(){
+        Scanner input = new Scanner(System.in);
 
+        System.out.print("Masukkan Username: ");
+        String inputUsername = input.nextLine();
+
+        System.out.print("Masukkan Password: ");
+        String inputPassword = input.nextLine();
+
+        if (inputUsername.equals(this.username) && inputPassword.equals(this.password)){
+            System.out.println("Login BErhasil!");
+        } else {
+            System.out.println("Login Gagal!");
+        }
     }
 
     @Override
     public void displayAppMenu(){
         Scanner input = new Scanner(System.in);
         System.out.println("1. Laporkan Barang Temuan/Hilang\n2. Lihat Daftar Laporan\n0. Logout");
+        System.out.print("Masukkan pilihan: ");
         String choice = input.nextLine().trim();
         if (choice.equals("1")){
             reportItem();
