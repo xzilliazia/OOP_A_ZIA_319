@@ -9,6 +9,6 @@ public abstract class userClass {
         this.password = password;
     }
     
-    public abstract void login();
+    public abstract boolean login();
     abstract void displayAppMenu();
 }

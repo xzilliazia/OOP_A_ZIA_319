@@ -10,7 +10,7 @@ public class Admin extends userClass implements AdminActions{
     }
 
     @Override
-    public void login(){
+    public boolean login(){
         Scanner input = new Scanner(System.in);
 
         System.out.print("Masukkan Username: ");
@@ -21,9 +21,10 @@ public class Admin extends userClass implements AdminActions{
 
         if (inputUsername.equals(this.username) && inputPassword.equals(this.password)){
             System.out.println("Login BErhasil!");
-            
+            return true;
         } else {
             System.out.println("Login Gagal!");
+            return false;
         }
     }
 
@@ -41,6 +42,7 @@ public class Admin extends userClass implements AdminActions{
     public void displayAppMenu(){
         Scanner input = new Scanner(System.in);
         System.out.println("1. Kelola Laporan Barang\n2. Kelola daftar Mahasiswa\n0. Logout");
+        System.out.print("Masukkan Pilihan: ");
         String choice = input.nextLine().trim();
         if (choice.equals("1")){
             manageItem();
@@ -51,5 +53,6 @@ public class Admin extends userClass implements AdminActions{
         } else {
             System.out.println("Pilhan tidak Valid");
         }
+        input.close();
     }
 }

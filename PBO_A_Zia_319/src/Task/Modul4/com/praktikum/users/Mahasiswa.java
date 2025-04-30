@@ -9,7 +9,7 @@ public class Mahasiswa extends userClass implements MahasiswaActions{
     }
     
     @Override
-    public void login(){
+    public boolean login(){
         Scanner input = new Scanner(System.in);
 
         System.out.print("Masukkan Username: ");
@@ -20,8 +20,10 @@ public class Mahasiswa extends userClass implements MahasiswaActions{
 
         if (inputUsername.equals(this.username) && inputPassword.equals(this.password)){
             System.out.println("Login BErhasil!");
+            return true;
         } else {
             System.out.println("Login Gagal!");
+            return false;
         }
     }
 
@@ -40,6 +42,7 @@ public class Mahasiswa extends userClass implements MahasiswaActions{
         } else {
             System.out.println("Pilhan tidak Valid");
         }
+        input.close();
     }
 
     @Override
@@ -55,7 +58,7 @@ public class Mahasiswa extends userClass implements MahasiswaActions{
         System.out.println("Deskripsi: "+ deskriptionItem);
         System.out.println("Lokasi Terakhir: "+ lastLocations);
 
-        // input.close();
+        input.close();
     }
     @Override
     public void viewReportItem(){

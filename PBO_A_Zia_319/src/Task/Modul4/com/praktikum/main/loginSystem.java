@@ -15,15 +15,18 @@ public class loginSystem {
         
         switch (inputLoginPage) {
             case 1:
-                admin1.login();
+                if (admin1.login()){
                 admin1.displayAppMenu();
+                }
                 break;
             case 2:
-                mhs1.login();
+                if (mhs1.login()){
                 mhs1.displayAppMenu();
+                }
                 break;
             default:
                 break;
         }
+        input.close();
     }
 }
