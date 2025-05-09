@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class loginSystem {
     public static void main(String[] args) {
         Mahasiswa mhs1 = new Mahasiswa("Ziaulhaq", "319");
-        Admin admin1 = new Admin("Bakri", "bakri01");
+        Admin admin1 = new Admin("johan", "123");
         
         Scanner input = new Scanner(System.in);
         System.out.print("Pilih Jenis Login (1. Admin/2. Mahsiswa): ");

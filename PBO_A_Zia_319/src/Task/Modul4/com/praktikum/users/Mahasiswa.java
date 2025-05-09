@@ -65,4 +65,8 @@ public class Mahasiswa extends userClass implements MahasiswaActions{
         System.out.println(">>Fitur laporan Belum Tersedia<<");
     }
 
+    public void viewReportItem(int nameItem){
+        System.out.println(">>Fitur laporan Belum Tersedia<<");
+    }
+
 }
