@@ -1,7 +1,7 @@
 package com.finalproject.masterClass;
 
 public class Entity {
-    private int id;
+    private final int id;
 
     public Entity(int id) {
         this.id = id;
@@ -9,9 +9,5 @@ public class Entity {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

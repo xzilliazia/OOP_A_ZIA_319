@@ -1,10 +1,17 @@
 package com.finalproject.masterClass;
+import java.util.Objects;
+
 import com.finalproject.actions.*;
 
 public abstract class Users extends Entity implements Authen {
+/**
+    * Abstract class representing a user with authentication functionality.
+    * Base class for Mahasiswa, Dosen, and Librarian.
+*/
+
     private String name;
-    private String username;
-    private String password;
+    private final String username;
+    private final String password;
     private AccountType typeAccount;
 
     public Users(int id, String name, String username, String password, AccountType typeAccount) {
@@ -24,21 +31,8 @@ public abstract class Users extends Entity implements Authen {
         return username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public AccountType getTypeAccount() {
         return typeAccount;
-    }
-
-    //setters
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public void setTypeAccount(AccountType typeAccount) {
@@ -52,9 +46,18 @@ public abstract class Users extends Entity implements Authen {
         this.name = name;
     }
 
+    private boolean loggedIn = false;
     @Override
     public boolean login(String username, String password) {
-        return this.username.equals(username) && this.password.equals(password);
+        if (Objects.equals(this.username, username) && (Objects.equals(this.password, password))){
+            loggedIn = true;
+        }
+        return false;
+
+    }
+    @Override
+    public boolean isLoggedIn() {
+        return loggedIn;
     }
 
     @Override
@@ -64,8 +67,8 @@ public abstract class Users extends Entity implements Authen {
 
     @Override
     public String toString() {
-        return "ID: " + getId() + ", Nama: " + name + ", Tipe Akun: " + typeAccount;
+        return String.format("ID: %d, Nama: %s, Tipe Akun: %s",
+                            getId(), name, typeAccount.getLabel());
     }
-
     public abstract void info();
 }
