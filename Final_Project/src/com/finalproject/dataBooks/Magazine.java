@@ -1,30 +1,50 @@
 package com.finalproject.dataBooks;
-
 import com.finalproject.masterClass.*;
+import java.util.Set;
+
 
 public class Magazine extends Media {
     private String edition;
 
-    public Magazine(int id, String title, String genre, boolean available, String edition) {
-        super(id, title, genre, available);
+    public static final Set<String> VALID_CONTEN_TYPES = Set.of("Fiksi", "Non-Fiksi", "Komik", "Sastra", "Ensiklopedia");
+
+    public Magazine(int id, String title, String genre, int stock, String edtion) {
+        super(id, title, genre, stock);
+        
         if (edition == null || edition.trim().isEmpty()) {
-            throw new IllegalArgumentException("Edisi tidak boleh kosong");
+            throw new IllegalArgumentException("Penulis tidak boleh kosong");
         }
         this.edition = edition;
+    }
+
+    public boolean isValidContenType(String contentype) {
+        return VALID_CONTEN_TYPES.stream().anyMatch(valid -> valid.equalsIgnoreCase(contentype));
+    }
+
+    public String getEdition() {
+        return edition;
+    }
+
+    public void setEdition(String edition) {
+        if (edition == null || edition.trim().isEmpty()) {
+            throw new IllegalArgumentException("Penulis tidak boleh kosong");
+        }
+        this.edition = edition;
+    }
+
+    @Override
+    public void info() {
+        System.out.println("Majalah: " + getEdition() + "\nEdisi: " + edition + "\nStock: " + getStock());
     }
 
     @Override
     public String toString() {
         return "Magazine{" +
                 "id=" + getId() +
-                ", title='" + getTitle() + '\'' +
-                ", available=" + isAvailable() +
-                ", edisi='" + edition + '\'' +
-                '}';
-    }
-
-    @Override
-    public void info() {
-        System.out.println("Majalah: " + getTitle() + "\nedisi: " + edition);
+                ", title='" + getEdition() + '\'' +
+                ", genre=" + getGenre() + '\'' +
+                ", stock=" + getStock() +
+                ", edition='" + edition + '\'' +
+               '}';
     }
 }

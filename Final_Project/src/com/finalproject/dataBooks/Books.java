@@ -1,6 +1,7 @@
 package com.finalproject.dataBooks;
-import java.util.Set;
 import com.finalproject.masterClass.*;
+import java.util.Set;
+
 
 public class Books extends Media {
     private String writer;
@@ -8,8 +9,8 @@ public class Books extends Media {
 
     public static final Set<String> VALID_CONTEN_TYPES = Set.of("Fiksi", "Non-Fiksi", "Komik", "Sastra", "Ensiklopedia");
 
-    public Books(int id, String title, String genre, boolean available, String writer, String contenType) {
-        super(id, title, genre, available);
+    public Books(int id, String title, String genre, int stock, String writer, String contenType) {
+        super(id, title, genre, stock);
         
         if (writer == null || writer.trim().isEmpty()) {
             throw new IllegalArgumentException("Penulis tidak boleh kosong");
@@ -17,7 +18,7 @@ public class Books extends Media {
         if (contenType == null || !isValidContenType(contenType)) {
             throw new IllegalArgumentException("Tipe konten tidak valid.");
         }
-        
+
         this.writer = writer;
         this.contenType = contenType;
     }
@@ -25,12 +26,13 @@ public class Books extends Media {
     public boolean isValidContenType(String contentype) {
         return VALID_CONTEN_TYPES.stream().anyMatch(valid -> valid.equalsIgnoreCase(contentype));
     }
-    public String getContenType() {
-        return contenType;
-    }
 
     public String getWriter() {
         return writer;
+    }
+
+    public String getContenType() {
+        return contenType;
     }
 
     public void setWriter(String writer) {
@@ -49,7 +51,7 @@ public class Books extends Media {
 
     @Override
     public void info() {
-        System.out.println("Buku: " + getTitle() + "\nPenulis: " + writer + "\nTipe: " + contenType);
+        System.out.println("Buku: " + getTitle() + "\nPenulis: " + writer + "\nTipe: " + contenType + "\nStock: " + getStock());
     }
 
     @Override
@@ -57,7 +59,8 @@ public class Books extends Media {
         return "Books{" +
                 "id=" + getId() +
                 ", title='" + getTitle() + '\'' +
-                ", available=" + isAvailable() +
+                ", genre=" + getGenre() + '\'' +
+                ", stock=" + getStock() +
                 ", writer='" + writer + '\'' +
                 ", contenType='" + contenType + '\'' +
                 '}';
