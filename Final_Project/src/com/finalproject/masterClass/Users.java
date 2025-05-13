@@ -29,7 +29,9 @@ public abstract class Users extends Entity implements Authen {
     public String getUsername() {
         return username;
     }
-
+    public String getPassword() {
+        return password;
+    }
     public AccountType getTypeAccount() {
         return typeAccount;
     }

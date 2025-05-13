@@ -75,7 +75,7 @@ public class UserManager {
         return user.getId() + "," +
                 user.getName() + "," +
                 user.getUsername() + "," +
-                "[PROTECTED]" + "," +
+                user.getPassword() + "," +
                 user.getTypeAccount() + "," +
                 special;
     }
