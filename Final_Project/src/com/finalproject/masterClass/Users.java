@@ -22,7 +22,6 @@ public abstract class Users extends Entity implements Authen {
         this.typeAccount = typeAccount;
     }
 
-    //getters
     public String getName() {
         return name;
     }
@@ -52,7 +51,7 @@ public abstract class Users extends Entity implements Authen {
         if (Objects.equals(this.username, username) && (Objects.equals(this.password, password))){
             loggedIn = true;
         }
-        return false;
+        return true;
 
     }
     @Override
