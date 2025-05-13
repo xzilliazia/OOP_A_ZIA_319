@@ -8,7 +8,7 @@ public class Magazine extends Media {
 
     public static final Set<String> VALID_CONTEN_TYPES = Set.of("Fiksi", "Non-Fiksi", "Komik", "Sastra", "Ensiklopedia");
 
-    public Magazine(int id, String title, String genre, int stock, String edtion) {
+    public Magazine(int id, String title, String genre, int stock, String edition) {
         super(id, title, genre, stock);
         
         if (edition == null || edition.trim().isEmpty()) {
