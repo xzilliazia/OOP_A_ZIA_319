@@ -1,6 +1,9 @@
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Welcome to My Java world. I wrote this code in VS CODE
+These are my assignments and projects when I entered college.
+I apologize if there are errors, I'm still a beginner.😊😊
+you can contact me via email if you have any suggestions
 
 ## Folder Structure
 
@@ -10,5 +13,3 @@ The workspace contains two folders by default, where:
 - 'Final_Project' and 'PBO' is different Project.
 - in the near future i will make 2 'Final_Project' that have different Storage system.
   one uses CSV file locally the other uses Database(MySql).
-
-I apologize if there are errors, I'm still a beginner.😊😊
