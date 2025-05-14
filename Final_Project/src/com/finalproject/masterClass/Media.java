@@ -2,10 +2,9 @@ package com.finalproject.masterClass;
 
 public abstract class Media extends Entity {
     private String title;
-    private String genre;
     private int stock;
 
-    public Media(int id, String title, String genre, int stock) {
+    public Media(int id, String title, int stock) {
         super(id);
         setTitle(title);
     }
@@ -19,17 +18,6 @@ public abstract class Media extends Entity {
             throw new IllegalArgumentException("Judul tidak boleh kosong");
         }
         this.title = title;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        if (genre == null || genre.trim().isEmpty()) {
-            throw new IllegalArgumentException("Genre tidak boleh kosong");
-        }
-        this.genre = genre;
     }
 
     public int getStock() {
@@ -64,7 +52,6 @@ public abstract class Media extends Entity {
         return "Media{" +
                 "id=" + getId() +
                 ", title='" + title + '\'' +
-                ", genre=" + genre +
                 ", stock='" + stock + '\'' +
                 '}';
     }

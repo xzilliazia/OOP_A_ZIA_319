@@ -9,8 +9,8 @@ public class Books extends Media {
 
     public static final Set<String> VALID_CONTEN_TYPES = Set.of("Fiksi", "Non-Fiksi", "Komik", "Sastra", "Ensiklopedia");
 
-    public Books(int id, String title, String genre, int stock, String writer, String contenType) {
-        super(id, title, genre, stock);
+    public Books(int id, String title, int stock, String writer, String contenType) {
+        super(id, title, stock);
         
         if (writer == null || writer.trim().isEmpty()) {
             throw new IllegalArgumentException("Penulis tidak boleh kosong");
@@ -59,7 +59,6 @@ public class Books extends Media {
         return "Books{" +
                 "id=" + getId() +
                 ", title='" + getTitle() + '\'' +
-                ", genre=" + getGenre() + '\'' +
                 ", stock=" + getStock() +
                 ", writer='" + writer + '\'' +
                 ", contenType='" + contenType + '\'' +

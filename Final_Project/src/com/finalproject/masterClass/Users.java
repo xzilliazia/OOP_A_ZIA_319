@@ -52,8 +52,9 @@ public abstract class Users extends Entity implements Authen {
     public boolean login(String username, String password) {
         if (Objects.equals(this.username, username) && (Objects.equals(this.password, password))){
             loggedIn = true;
+            return true;
         }
-        return true;
+        return false;
 
     }
     @Override

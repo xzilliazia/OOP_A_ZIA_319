@@ -112,8 +112,6 @@ public class Dashboard {
             int id = Integer.parseInt(input.nextLine());
             System.out.print("Judul: ");
             String title = input.nextLine();
-            System.out.print("Genre: ");
-            String genre = input.nextLine();
             System.out.print("Stok: ");
             int stock = Integer.parseInt(input.nextLine());
             System.out.print("Penulis: ");
@@ -121,7 +119,7 @@ public class Dashboard {
             System.out.print("Tipe Konten: ");
             String contentType = input.nextLine();
 
-            Books book = new Books(id, title, genre, stock, writer, contentType);
+            Books book = new Books(id, title, stock, writer, contentType);
             bookManager.addBook(book);
             bookManager.saveToFile("D:/Coding/Java/Final_Project/src/com/finalproject/books.csv");
 
@@ -138,14 +136,12 @@ public class Dashboard {
             int id = Integer.parseInt(input.nextLine());
             System.out.print("Judul: ");
             String title = input.nextLine();
-            System.out.print("Genre: ");
-            String genre = input.nextLine();
             System.out.print("Stok: ");
             int stock = Integer.parseInt(input.nextLine());
             System.out.print("Edisi: ");
             String edition = input.nextLine();
 
-            Magazine mag = new Magazine(id, title, genre, stock, edition);
+            Magazine mag = new Magazine(id, title, stock, edition);
             magazineManager.addMagazine(mag);
             magazineManager.saveToFile("D:/Coding/Java/Final_Project/src/com/finalproject/magazines.csv");
 

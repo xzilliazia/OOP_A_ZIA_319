@@ -1,6 +1,7 @@
-id,title,genre,stock,writer,contentype
-1,Laskar Pelangi,Fiksi,10,Andrea Hirata,Fiksi
-2,Atomic Habits,Non-Fiksi,5,James Clear,Non-Fiksi
-3,Naruto,Komik,7,Masashi Kishimoto,Komik
-4,Pramoedya Ananta Toer: Cerita,Cerita,8,Pramoedya Ananta Toer,Sastra
-5,Ensiklopedia Sains,Ilmu,6,Tim Penulis,Ensiklopedia
+id,title,stock,writer,contentType
+1,Laskar Pelangi,0,Andrea Hirata,Fiksi
+2,Atomic Habits,0,James Clear,Non-Fiksi
+3,Naruto,0,Masashi Kishimoto,Komik
+4,Pramoedya Ananta Toer: Cerita,0,Pramoedya Ananta Toer,Sastra
+5,Ensiklopedia Sains,0,Tim Penulis,Ensiklopedia
+6,Berserk,0,Johanes,Fiksi

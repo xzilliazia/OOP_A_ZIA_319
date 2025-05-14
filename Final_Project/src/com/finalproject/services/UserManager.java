@@ -52,7 +52,7 @@ public class UserManager {
             String name = parts[1];
             String username = parts[2];
             String password = parts[3];
-            AccountType type = AccountType.valueOf(parts[4]);
+            AccountType type = AccountType.valueOf(parts[4].toUpperCase());
             String special = parts[5];
 
             return switch (type) {

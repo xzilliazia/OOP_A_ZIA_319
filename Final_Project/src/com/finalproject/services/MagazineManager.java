@@ -45,7 +45,7 @@ public class MagazineManager {
             int stock = Integer.parseInt(parts[3]);
             String edition = parts[4];
 
-            return new Magazine(id, title, genre, stock, edition);
+            return new Magazine(id, title, stock, edition);
         } catch (Exception e) {
             System.err.println("Format salah: " + line);
             return null;
@@ -55,7 +55,6 @@ public class MagazineManager {
     private String toLine(Magazine mag) {
         return mag.getId() + "," +
                mag.getTitle() + "," +
-               mag.getGenre() + "," +
                mag.getStock() + "," +
                mag.getEdition();
     }

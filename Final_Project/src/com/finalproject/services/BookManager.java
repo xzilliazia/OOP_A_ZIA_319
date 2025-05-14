@@ -69,7 +69,7 @@ public class BookManager {
             String writer = parts[4];
             String contentType = parts[5];
 
-            return new Books(id, title, genre, stock, writer, contentType);
+            return new Books(id, title, stock, writer, contentType);
         } catch (Exception e) {
             System.err.println("Format salah pada line: " + line);
             return null;
@@ -79,7 +79,6 @@ public class BookManager {
     private String toLine(Books book) {
         return book.getId() + "," +
                book.getTitle() + "," +
-               book.getGenre() + "," +
                book.getStock() + "," +
                book.getWriter() + "," +
                book.getContenType();

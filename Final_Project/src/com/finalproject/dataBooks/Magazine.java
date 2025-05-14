@@ -8,8 +8,8 @@ public class Magazine extends Media {
 
     public static final Set<String> VALID_CONTEN_TYPES = Set.of("Fiksi", "Non-Fiksi", "Komik", "Sastra", "Ensiklopedia");
 
-    public Magazine(int id, String title, String genre, int stock, String edition) {
-        super(id, title, genre, stock);
+    public Magazine(int id, String title, int stock, String edition) {
+        super(id, title, stock);
         
         if (edition == null || edition.trim().isEmpty()) {
             throw new IllegalArgumentException("Penulis tidak boleh kosong");
@@ -42,7 +42,6 @@ public class Magazine extends Media {
         return "Magazine{" +
                 "id=" + getId() +
                 ", title='" + getEdition() + '\'' +
-                ", genre=" + getGenre() + '\'' +
                 ", stock=" + getStock() +
                 ", edition='" + edition + '\'' +
                '}';

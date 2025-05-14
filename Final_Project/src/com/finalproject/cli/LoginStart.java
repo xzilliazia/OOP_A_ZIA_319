@@ -28,7 +28,7 @@ public class LoginStart {
     }
 
     private static void printWelcome() {
-        System.out.println("Current working directory: " + System.getProperty("user.dir"));
+        // System.out.println("Current working directory: " + System.getProperty("user.dir"));
         System.out.println("===================================");
         System.out.println("   SELAMAT DATANG DI PERPUSTAKAAN  ");
         System.out.println("===================================");
@@ -43,6 +43,7 @@ public class LoginStart {
         String password = scanner.nextLine().trim();
 
         Users user = userManager.login(username, password);
+
 
         if (user != null) {
             System.out.println("Login berhasil! Selamat datang, " + user.getName());
