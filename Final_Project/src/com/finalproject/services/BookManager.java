@@ -64,10 +64,9 @@ public class BookManager {
             String[] parts = line.split(",");
             int id = Integer.parseInt(parts[0]);
             String title = parts[1];
-            String genre = parts[2];
-            int stock = Integer.parseInt(parts[3]);
-            String writer = parts[4];
-            String contentType = parts[5];
+            int stock = Integer.parseInt(parts[2]);
+            String writer = parts[3];
+            String contentType = parts[4];
 
             return new Books(id, title, stock, writer, contentType);
         } catch (Exception e) {

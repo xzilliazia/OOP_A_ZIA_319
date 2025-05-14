@@ -41,9 +41,8 @@ public class MagazineManager {
             String[] parts = line.split(",");
             int id = Integer.parseInt(parts[0]);
             String title = parts[1];
-            String genre = parts[2];
-            int stock = Integer.parseInt(parts[3]);
-            String edition = parts[4];
+            int stock = Integer.parseInt(parts[2]);
+            String edition = parts[3];
 
             return new Magazine(id, title, stock, edition);
         } catch (Exception e) {
