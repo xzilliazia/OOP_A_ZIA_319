@@ -20,4 +20,8 @@ public class Barang {
     public void setStok(int stok) {
         this.stok = stok;
     }
+    @Override
+    public String toString() {
+        return nama + " (Stok: " + stok + ")";
+    }
 }
