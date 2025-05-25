@@ -6,7 +6,7 @@ public abstract class Content {
     private String itemlocation;
     private String itemStatus;
     
-     public Content(String itemName, String deskriptionItem, String location, String status){
+    public Content(String itemName, String deskriptionItem, String location, String status){
          this.itemName = itemName;
          this.deskriptionItem = deskriptionItem;
          this.itemlocation = location;

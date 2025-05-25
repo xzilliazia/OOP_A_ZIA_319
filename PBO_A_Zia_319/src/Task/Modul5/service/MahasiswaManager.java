@@ -47,8 +47,19 @@ public class MahasiswaManager {
         return null;
     }
 
-    public List<Mahasiswa> getAllMahasiswa() {
-        return mahasiswaList;
+    public void displayAll() {
+        if (mahasiswaList.isEmpty()) {
+            System.out.println("Tidak ada data mahasiswa.");
+            return;
+        }
+
+        System.out.println("\n=== Daftar Mahasiswa ===");
+        for (Mahasiswa mhs : mahasiswaList) {
+            System.out.println("ID   : " + mhs.getId());
+            System.out.println("Nama : " + mhs.getName());
+            System.out.println("--------------------------");
+        }
     }
+
 
 }

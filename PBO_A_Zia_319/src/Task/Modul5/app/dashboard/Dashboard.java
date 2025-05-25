@@ -10,8 +10,12 @@ public class Dashboard {
 
     private static final Scanner input = new Scanner(System.in);
     private static final ItemManager itemManager = new ItemManager();
+    private static final MahasiswaManager mahasiswaManager = new MahasiswaManager();
+    private static final AdminManager adminManager = new AdminManager();
 
     static {
+        mahasiswaManager.loadFromFile("D:/Coding/Java/PBO_A_Zia_319/src/Task/Modul5/mahasiswa.csv");
+        adminManager.loadFromFile("D:/Coding/Java/PBO_A_Zia_319/src/Task/Modul5/admin.csv");
         itemManager.loadFromFile("D:/Coding/Java/PBO_A_Zia_319/src/Task/Modul5/items.csv");
     }
 
@@ -25,6 +29,7 @@ public class Dashboard {
 
             if (user instanceof Admin) {
                 System.out.println("3. Kelola Laporan");
+                System.out.println("4. Kelola User");
             }
 
             System.out.println("0. Logout");
@@ -41,6 +46,11 @@ public class Dashboard {
                         System.out.println("Akses ditolak.");
                     }
                 }
+                case "4" -> {
+                    if (user instanceof Admin) {
+                        manageUser();
+                    }
+                }
                 case "0" -> {
                     System.out.println("Logout...");
                     running = false;
@@ -48,6 +58,34 @@ public class Dashboard {
                 default -> System.out.println("Menu tidak dikenali.");
             }
         }
+    }
+
+    private static void manageUser() {
+        System.out.println("\n=== Kelola User ===");
+        System.out.println("1. Lihat Mahasiswa");
+        System.out.println("2. Lihat Admin");
+        System.out.println("3. Tambah Mahasiswa");
+        System.out.print("Pilih: ");
+        String pilihan = input.nextLine();
+
+        switch (pilihan) {
+            case "1" -> mahasiswaManager.displayAll();
+            case "2" -> adminManager.displayAll();
+            case "3" -> addMahasiswa();
+            default -> System.out.println("Pilihan tidak valid.");
+        }
+    }
+
+    private static void addMahasiswa() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan ID Mahasiswa: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        System.out.print("Masukkan Nama Mahasiswa: ");
+        String name = scanner.nextLine();
+
+        Mahasiswa mahasiswaBaru = new Mahasiswa(id, name);
+        mahasiswaManager.addMahasiswa(mahasiswaBaru);
+        System.out.println("Mahasiswa berhasil ditambahkan.");
     }
 
     private static void laporBarang(Entity user) {

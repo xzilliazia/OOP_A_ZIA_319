@@ -51,10 +51,6 @@ public class AdminManager {
         } return null;
     }
 
-    public List<Admin> getAdminList() {
-        return adminList;
-    }
-
     public Admin login(String name, String password) {
         for (Admin admin : adminList) {
             if (admin.getName().equalsIgnoreCase(name) && admin.getPassword().equals(password)) {
@@ -63,4 +59,19 @@ public class AdminManager {
         }
         return null;
     }
+
+    public void displayAll() {
+        if (adminList.isEmpty()) {
+            System.out.println("Tidak ada data admin.");
+            return;
+        }
+
+        System.out.println("\n=== Daftar Admin ===");
+        for (Admin adm : adminList) {
+            System.out.println("Nama     : " + adm.getName());
+            System.out.println("--------------------------");
+        }
+    }
+
+
 }

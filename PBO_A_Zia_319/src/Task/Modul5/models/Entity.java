@@ -1,7 +1,6 @@
 package Task.Modul5.models;
 
-public abstract class Entity {
-    private int id;
+public abstract class Entity { private int id;
     private String name;
 
     public Entity(int id, String name) {
