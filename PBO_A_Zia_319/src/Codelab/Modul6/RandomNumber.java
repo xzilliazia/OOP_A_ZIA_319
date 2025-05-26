@@ -16,7 +16,7 @@ public class RandomNumber extends Application {
     }
 
     private int correctNumber;
-    private final int[] jumlahPercobaan = {0};
+    private int jumlahPercobaan = 0;
 
     public void start(Stage stage) {
         correctNumber = new Random().nextInt(100) + 1;
@@ -42,7 +42,7 @@ public class RandomNumber extends Application {
         guessNumber.setOnAction(e -> {
             if (guessNumber.getText().equals("Main lagi")) {
                 correctNumber = new Random().nextInt(100) + 1;
-                jumlahPercobaan[0] = 0;
+                jumlahPercobaan = 0;
                 result.setText("");
                 infoPercobaan.setText("Jumlah Percobaan: 0");
                 inputUserNumber.clear();
@@ -53,7 +53,7 @@ public class RandomNumber extends Application {
 
             try {
                 int tebakan = Integer.parseInt(inputUserNumber.getText());
-                jumlahPercobaan[0]++;
+                jumlahPercobaan++;
 
                 if (tebakan < correctNumber) {
                     result.setText("🔻 Terlalu kecil");
@@ -64,12 +64,12 @@ public class RandomNumber extends Application {
                     result.setTextFill(Color.ORANGE);
                     inputUserNumber.clear();
                 } else {
-                    result.setText("👍Tebakan benar\nJumlah percobaan: " + jumlahPercobaan[0]);
+                    result.setText("👍Tebakan benar\nJumlah percobaan: " + jumlahPercobaan);
                     result.setTextFill(Color.GREEN);
                     guessNumber.setText("Main lagi");
                 }
 
-                infoPercobaan.setText("Jumlah Percobaan: " + jumlahPercobaan[0]);
+                infoPercobaan.setText("Jumlah Percobaan: " + jumlahPercobaan);
 
             } catch (NumberFormatException e2) {
                 result.setText("Angka invalid");
@@ -80,7 +80,6 @@ public class RandomNumber extends Application {
 
         HBox hbox = new HBox(10, inputUserNumber, guessNumber);
         hbox.setStyle("-fx-alignment: center;");
-
         VBox root = new VBox(15, nameApp, hbox, result, infoPercobaan);
         root.setStyle("-fx-alignment: center");
 
