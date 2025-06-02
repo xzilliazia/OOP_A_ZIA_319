@@ -2,7 +2,6 @@ package Task.Modul6.com.attr;
 
 import Task.Modul6.com.actions.AdminAc;
 import Task.Modul6.com.data.ItemStorage;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

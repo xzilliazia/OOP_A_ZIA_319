@@ -1,21 +1,19 @@
 package Task.Modul6.com.gui;
 
 import Task.Modul6.com.attr.*;
-import Task.Modul6.com.data.Admin;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-public class AdminDashboard extends Stage{
-    private final AdminAttr admin;
-    public AdminDashboard(AdminAttr admin) {
-        this.admin = admin;
-        initUI();
-    }
-    private void initUI() {
-        this.setTitle("Laporan Admin Dashboard");
+public class AdminDashboard {
+
+    public static void show (Stage stage, AdminAttr admin) {
+
+        stage.setTitle("Laporan Admin Dashboard");
 
         Label welcomeLabel = new Label("Halo, Administrator ganteng cok");
         Label laporanLabel = new Label("Laporan Barang");
@@ -46,25 +44,37 @@ public class AdminDashboard extends Stage{
         TableView<Mahasiswa> mahasiswaTable = new TableView<>();
         TableColumn<Mahasiswa, String> namaMhsCol = new TableColumn<>("Nama");
         namaMhsCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getNama()));
+        namaMhsCol.setPrefWidth(250);
         TableColumn<Mahasiswa, String> nimCol = new TableColumn<>("NIM");
         nimCol.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getNIM()));
+        nimCol.setPrefWidth(250);
+        namaMhsCol.prefWidthProperty().bind(mahasiswaTable.widthProperty().multiply(0.5));
+        nimCol.prefWidthProperty().bind(mahasiswaTable.widthProperty().multiply(0.5));
         mahasiswaTable.getColumns().addAll(namaMhsCol, nimCol);
         mahasiswaTable.setItems(admin.manageUsers());
 
         Button logoutBtn = new Button("Logout");
-        logoutBtn.setOnAction(e -> this.close());
+        logoutBtn.setOnAction(e -> {
+            LoginPanel.showLogin(stage);
+        });
 
         // Layout
         VBox kiri = new VBox(10, welcomeLabel, laporanLabel, itemTable, claimBtn, logoutBtn);
-        kiri.setPrefWidth(300);
+        kiri.setPrefWidth(500);
 
-        VBox kanan = new VBox(10, new Label("Data Mahasiswa"), mahasiswaTable);
-        kanan.setPrefWidth(300);
+        VBox kanan = new VBox(39, new Label("Data Mahasiswa"), mahasiswaTable);
+        kanan.setPrefWidth(500);
+        kanan.setAlignment(Pos.TOP_CENTER);
+
 
         HBox main = new HBox(20, kiri, kanan);
-        main.setPadding(new javafx.geometry.Insets(10));
+        main.setPadding(new Insets(10));
 
-        this.setScene(new Scene(main));
-        this.show();
+        stage.setScene(new Scene(main));
+        stage.setWidth(800);
+        stage.setHeight(600);
+        stage.centerOnScreen();
+        stage.show();
+
     }
 }

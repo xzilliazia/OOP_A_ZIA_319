@@ -9,6 +9,9 @@ public class MainApps extends Application {
         launch(args);
     }
     public void start(Stage primaryStage) {
-        new LoginPanel();
+        LoginPanel.showLogin(primaryStage);
+        primaryStage.setWidth(800);
+        primaryStage.setHeight(600);
+        primaryStage.show();
     }
 }
